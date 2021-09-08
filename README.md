@@ -1,7 +1,15 @@
 # Testing Out BOt-dev with JS
 
 ### Usage:
+```/start```
 Currently this just fetchs random walls
+
+[![](https://img.youtube.com/vi/IGduIK437iI/hqdefault.jpg)](https://www.youtube.com/watch?v=IGduIK437iI)
+
+### Note:
+If Bot isnt running ```git clone $repo && cd $repo; yarn install && yarn nodemon bot.js $BOT_TOKEN```
+
+get the bot token from BotFather. This is testing/Just for fun project so no real hosting is used.
 
 ### License:
 ```
