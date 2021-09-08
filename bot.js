@@ -5,7 +5,9 @@ prompt.start()
 const {TOKEN} = await prompt.get('TOKEN');
 const bot = new tg.Telegraf(TOKEN)
 const debug = false
-const url = 'https://source.unsplash.com/'
+const screen = '1920x1080'
+const source = 'https://source.unsplash.com/' + screen + '/?'
+let query = 'random'
 
 //for invoking start command
 bot.command('start', ctx => {
@@ -17,8 +19,8 @@ bot.command('start', ctx => {
       inline_keyboard: [
         [
           {
-            text: 'random',
-            callback_data: 'query',
+            text: query,
+            callback_data: 'display',
           },
         ]
       ]
@@ -27,16 +29,18 @@ bot.command('start', ctx => {
 })
 
 //fetch wallpaper
-bot.action('query', ctx => {
+bot.action('display', ctx => {
   ctx.deleteMessage();
-  ctx.replyWithPhoto(url + 'random')
+  ctx.replyWithPhoto({
+    url: source + query
+  })
   bot.telegram.sendMessage(ctx.chat.id,'More Images ??', {
     reply_markup: {
       inline_keyboard: [
         [
           {
             text: 'Yes',
-            callback_data: 'query',
+            callback_data: 'display',
           },
         ]
       ]
