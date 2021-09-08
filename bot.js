@@ -1,9 +1,6 @@
 import tg from 'telegraf'
-import prompt from 'prompt'
 
-prompt.start()
-const {TOKEN} = await prompt.get('TOKEN');
-const bot = new tg.Telegraf(TOKEN)
+const bot = new tg.Telegraf(process.argv[2])
 const debug = false
 const screen = '1920x1080'
 const source = 'https://source.unsplash.com/' + screen + '/?'

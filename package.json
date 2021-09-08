@@ -1,7 +1,7 @@
 {
   "type": "module",
   "dependencies": {
-    "prompt": "^1.2.0",
+    "nodemon": "^2.0.12",
     "telegraf": "^4.4.1"
   }
 }
