@@ -10,8 +10,7 @@ let query = 'random'
 bot.command('start', ctx => {
   debug && console.log(ctx)
   ctx.reply(`Welcome to Phenic Bot.\nFind your most lovable wallpaper now 😄`)
-  let Message = `Choose wallpaper category :`;
-  bot.telegram.sendMessage(ctx.chat.id, Message, {
+  bot.telegram.sendMessage(ctx.chat.id, `Choose wallpaper category :`, {
     reply_markup: {
       inline_keyboard: [
         [
