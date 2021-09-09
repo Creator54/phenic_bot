@@ -26,9 +26,9 @@ bot.command('start', ctx => {
 })
 
 //fetch wallpaper
-bot.action('display', ctx => {
+bot.action('display', async ctx => {
   ctx.deleteMessage();
-  ctx.replyWithPhoto({
+  await ctx.replyWithPhoto({
     url: source + query
   })
   bot.telegram.sendMessage(ctx.chat.id,'More Images ??', {
